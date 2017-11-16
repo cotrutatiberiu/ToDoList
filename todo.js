@@ -9,8 +9,10 @@ function addLi() {
   var deleteLiButton = document.createElement("button");
   var ulList = document.getElementById("list");
   var newLi = document.createElement("li");
-  var checkBox = document.createElement("input");
+  var checkBox = document.createTextNode("\u2714");
   var reset = document.getElementById("myForm").reset();
+
+  var span = document.createElement("span");
 
   var newText = document.createTextNode(input);
   var deleteText = document.createTextNode("x");
@@ -22,12 +24,15 @@ function addLi() {
   newButton.setAttribute("type", "button");
   newButton.style.width = "387px";
 
-  checkBox.setAttribute("type", "checkbox");
-
   deleteLiButton.addEventListener("click", deleteLi);
   deleteLiButton.setAttribute("type", "button");
 
-  newLi.appendChild(checkBox);
+  //Had to make text child of an element in order to style it!!
+  span.appendChild(checkBox);
+  span.style.display = "none";
+  span.style.position="absolute";
+
+  newLi.appendChild(span);
   newLi.appendChild(newButton);
   newLi.appendChild(deleteLiButton);
 
@@ -39,11 +44,11 @@ function addLi() {
     switch (striked) {
       case true:
         newButton.style.textDecoration = "line-through";
-        checkBox.setAttribute("checked", "true");
+        span.style.display = "block";
         break;
       case false:
         newButton.style.textDecoration = "none";
-        checkBox.removeAttribute("checked");
+        span.style.display="none";
         break;
     }
   }
