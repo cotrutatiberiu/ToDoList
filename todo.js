@@ -9,7 +9,7 @@ function addLi() {
   var deleteLiButton = document.createElement("button");
   var ulList = document.getElementById("list");
   var newLi = document.createElement("li");
-  var checkBox=document.createElement("input");
+  var checkBox = document.createElement("input");
   var reset = document.getElementById("myForm").reset();
 
   var newText = document.createTextNode(input);
@@ -22,7 +22,7 @@ function addLi() {
   newButton.setAttribute("type", "button");
   newButton.style.width = "387px";
 
-  checkBox.setAttribute("type","checkbox");
+  checkBox.setAttribute("type", "checkbox");
 
   deleteLiButton.addEventListener("click", deleteLi);
   deleteLiButton.setAttribute("type", "button");
@@ -39,11 +39,11 @@ function addLi() {
     switch (striked) {
       case true:
         newButton.style.textDecoration = "line-through";
-        // checkBox.setAttribute("checked","true");
+        checkBox.setAttribute("checked", "true");
         break;
       case false:
         newButton.style.textDecoration = "none";
-        // checkBox.setAttribute("checked","false");
+        checkBox.removeAttribute("checked");
         break;
     }
   }
