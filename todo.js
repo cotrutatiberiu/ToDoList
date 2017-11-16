@@ -30,7 +30,7 @@ function addLi() {
   //Had to make text child of an element in order to style it!!
   span.appendChild(checkBox);
   span.style.display = "none";
-  span.style.position="absolute";
+  span.style.position = "absolute";
 
   newLi.appendChild(span);
   newLi.appendChild(newButton);
@@ -48,7 +48,7 @@ function addLi() {
         break;
       case false:
         newButton.style.textDecoration = "none";
-        span.style.display="none";
+        span.style.display = "none";
         break;
     }
   }
